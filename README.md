@@ -31,15 +31,16 @@ archiveVersion = ''
 3. mkdir -p src/main/webapp/WEB-INF
    touch src/main/webapp/index.jsp
 
-<html>
+<!-- <html>
 <body>
     <h1>Hello, World!</h1>
 </body>
-</html>
+</html> -->
 
 4. RUN ./gradlew clean build
    Then copy the build/lib/IbrahimClientServer.war file to tomcat's webapp/ folder.
    Start the server and Deploy the index.jsp servlet
 
 5. Verify http://localhost:8080/server/index.jsp
+
 # CS5244-Proj3
