@@ -1,7 +1,39 @@
+.book-title {
+  font-weight: bold;
+}
 
-.book-lists {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1em;
-    gap: 1em;
+.book-author {
+  font-style: italic;
+  text-align: start;
+}
+
+.cards-container {
+  gap: 20px;
+}
+
+.card {
+  grid-column: span 2;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  text-align: center;
+}
+
+.add-to-cart-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 10;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  margin-top: 5px;
 }

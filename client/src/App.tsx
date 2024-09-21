@@ -1,29 +1,20 @@
-import AppHeader from './components/AppHeader';
-import AppFooter from './components/AppFooter';
-import Home from './components/Home'
-import CategoryBookList from './components/CategoryBookList';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom"
-
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import HomePage from "./components/HomePage";
+import CategoryPage from "./components/CategoryBookList";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-      <Router>
-        <AppHeader />
-        <Routes>
-            {/* you need to include a route here that takes you to your homepage forexample when the logo is clicked*/}
-            <Route path="/categories" element={<CategoryBookList />} />
-          <Route path="*" element={<div>Page Not Found</div>} />
-        </Routes>
-
-        <AppFooter />
-
-      </Router>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/category/:categoryName" element={<CategoryPage />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
 export default App;
-
