@@ -1,26 +1,29 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import AppHeader from './components/AppHeader';
+import AppFooter from './components/AppFooter';
+import Home from './components/Home'
+import CategoryBookList from './components/CategoryBookList';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom"
 
-const App = () => {
+
+function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <AppHeader />
+        <Routes>
+            {/* you need to include a route here that takes you to your homepage forexample when the logo is clicked*/}
+            <Route path="/categories" element={<CategoryBookList />} />
+          <Route path="*" element={<div>Page Not Found</div>} />
+        </Routes>
+
+        <AppFooter />
+
+      </Router>
   );
-};
+}
 
 export default App;
+
