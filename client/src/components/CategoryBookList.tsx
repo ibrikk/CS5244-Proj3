@@ -1,4 +1,6 @@
 import React from "react";
+import "../assets/css/CategoryBookList.css";
+import "../assets/css/global.css";
 
 const CategoryPage = () => {
   return (

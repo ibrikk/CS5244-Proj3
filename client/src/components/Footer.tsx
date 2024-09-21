@@ -1,4 +1,8 @@
 import React from "react";
+import { Mail, MapPin, Facebook } from "lucide-react";
+import "../assets/css/global.css";
+import "../assets/css/AppHeader.css";
+import "../assets/css/AppFooter.css";
 
 const Footer = () => {
   return (
@@ -9,13 +13,13 @@ const Footer = () => {
       <p>©2024  Ibo.ok inc. All Rights Reserved</p>
       <section className="social-media-icons">
         <a href="/">
-          <i data-lucide="mail"></i>
+          <Mail />
         </a>
         <a href="/">
-          <i data-lucide="map-pin"></i>
+          <MapPin />
         </a>
         <a href="/">
-          <i data-lucide="facebook"></i>
+          <Facebook />
         </a>
         <a href="/" className="x-twitter-icon">
           <i className="fa-brands fa-x-twitter"></i>

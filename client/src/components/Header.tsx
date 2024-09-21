@@ -18,7 +18,7 @@ const Header = () => {
             </div>
           </a>
           <a href="/" className="shopping-bag">
-            <ShoppingBag color="black" size={23} />
+            <ShoppingBag color="black" />
             <span className="badge">3</span>
           </a>
         </div>
