@@ -81,6 +81,7 @@ const HomePage = () => {
       <section className="homepage-card-section grid grid-full">
         <h3 className="homepage-category-name">New Releases</h3>
         <div className="cards-container grid grid-full">
+          {/* TODO: Home Category List insert here */}
           {/* Example Card */}
           <div className="card">
             <div className="book-image-read-btn-container">
