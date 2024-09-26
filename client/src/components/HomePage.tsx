@@ -16,11 +16,6 @@ interface HomePageProps {
 }
 
 const HomePage: React.FC<HomePageProps> = ({ mockData }) => {
-  console.log("mockData", mockData);
-
-  const [customHomePageCategories, setCustomHomePageCategories] =
-    React.useState<Category>(mockData[0]);
-
   return (
     <>
       <NavBar />
@@ -28,11 +23,9 @@ const HomePage: React.FC<HomePageProps> = ({ mockData }) => {
       <Hero />
 
       <section className="homepage-card-section grid grid-full">
-        <h3 className="homepage-category-name">
-          {customHomePageCategories.category}
-        </h3>
+        <h3 className="homepage-category-name">{mockData[0].category}</h3>
         <div className="cards-container grid grid-full">
-          {customHomePageCategories.books.map((book: Book) => (
+          {mockData[0].books.map((book: Book) => (
             <Card key={book.id} book={book} isHomePage={true} />
           ))}
         </div>

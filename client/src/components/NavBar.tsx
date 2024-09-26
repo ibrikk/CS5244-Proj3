@@ -1,34 +1,74 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+interface DropdownCategory {
+  value: string;
+  name: string;
+  navigateTo: string;
+}
+
+interface HomePageCategory {
+  link: string;
+  name: string;
+}
 
 const NavBar = () => {
+  const dropdownCategories: DropdownCategory[] = [
+    {
+      value: "1",
+      name: "Fiction",
+      navigateTo: "/category/Fiction",
+    },
+    {
+      value: "2",
+      name: "Non-fiction",
+      navigateTo: "/category/Non-fiction",
+    },
+    {
+      value: "3",
+      name: "Science",
+      navigateTo: "/category/Science",
+    },
+    {
+      value: "4",
+      name: "History",
+      navigateTo: "/category/History",
+    },
+    {
+      value: "5",
+      name: "Biography",
+      navigateTo: "/category/Biography",
+    },
+  ];
+
+  const homePageCategories: HomePageCategory[] = [
+    {
+      link: "/category/NewReleases",
+      name: "New Releases",
+    },
+    {
+      link: "/category/BestSellers",
+      name: "Best Sellers",
+    },
+    { link: "/category/Trending", name: "Trending" },
+    { link: "/category/OnSale", name: "On Sale" },
+  ];
+
   return (
     <nav className="grid grid-full">
       <div className="custom-select">
         <select>
-          <option value="">Categories</option>
-          <option value="1">Fiction</option>
-          <option value="2">Non-fiction</option>
-          <option value="3">Science</option>
-          <option value="4">History</option>
-          <option value="5">Biography</option>
+          {dropdownCategories.map((category) => (
+            <option value={category.value}>{category.name}</option>
+          ))}
         </select>
         <div className="select-styled">Categories</div>
         <ul className="select-options">
-          <a href="category.html">
-            <li rel="1">Fiction</li>
-          </a>
-          <a href="category.html">
-            <li rel="2">Non-fiction</li>
-          </a>
-          <a href="category.html">
-            <li rel="3">Science</li>
-          </a>
-          <a href="category.html">
-            <li rel="4">History</li>
-          </a>
-          <a href="category.html">
-            <li rel="5">Biography</li>
-          </a>
+          {dropdownCategories.map((category) => (
+            <Link to={category.navigateTo}>
+              <li rel={category.value}>{category.name}</li>
+            </Link>
+          ))}
         </ul>
       </div>
       <div className="search-bar">
@@ -38,18 +78,11 @@ const NavBar = () => {
         <span className="material-symbols-outlined search-icon">search</span>
       </div>
       <div className="homepage-categories">
-        <a href="/category/Fiction" className="category-link">
-          New Releases
-        </a>
-        <a href="/category/BestSellers" className="category-link">
-          Best Sellers
-        </a>
-        <a href="/category/Trending" className="category-link">
-          Trending
-        </a>
-        <a href="/category/OnSale" className="category-link">
-          On Sale
-        </a>
+        {homePageCategories.map((category) => (
+          <Link to={category.link} className="category-link">
+            {category.name}
+          </Link>
+        ))}
       </div>
     </nav>
   );
