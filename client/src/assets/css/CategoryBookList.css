@@ -9,6 +9,7 @@
 
 .cards-container {
   gap: 20px;
+  padding-bottom: 20px;
 }
 
 .card {

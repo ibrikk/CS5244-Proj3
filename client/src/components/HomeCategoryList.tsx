@@ -1,6 +1,5 @@
-import '../assets/css/HomeCategoryList.css';
-import {categoryList, categoryImages} from '../types';
-
+import "../assets/css/HomeCategoryList.css";
+// import { categoryList, categoryImages } from "../types";
 
 /*const categoryImageFileName = (category) => {
   let name = category.name.toLowerCase();
@@ -9,24 +8,22 @@ import {categoryList, categoryImages} from '../types';
   return `${name}.jpg`;
 };*/
 
-
-function HomeCategoryList(){
-
-    return(
-
-  <ul className ="home-list">
-      {categoryList.map((category) => (
-          <li className="home-list-li">
-    <img src={categoryImages[category.name.toLowerCase()]}
-         alt="book.title"
-    />
-              <div className="home-list-div"> {"You Should display the category name here"} </div>
-          </li>
-      ))}
-
-
-  </ul>
-
-)
+function HomeCategoryList() {
+  return (
+    <ul className="home-list">
+      {/* {categoryList.map((category) => (
+        <li className="home-list-li">
+          <img
+            src={categoryImages[category.name.toLowerCase()]}
+            alt="book.title"
+          />
+          <div className="home-list-div">
+            {" "}
+            {"You Should display the category name here"}{" "}
+          </div>
+        </li>
+      ))} */}
+    </ul>
+  );
 }
 export default HomeCategoryList;
