@@ -12,7 +12,7 @@ interface HomePageCategory {
   name: string;
 }
 
-const NavBar = () => {
+const HomeNavBar = () => {
   const dropdownCategories: DropdownCategory[] = [
     {
       value: "1",
@@ -88,4 +88,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default HomeNavBar;

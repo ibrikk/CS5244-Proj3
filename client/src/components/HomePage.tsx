@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "./Hero";
-import NavBar from "./NavBar";
+import HomeNavBar from "./HomeNavBar";
 import Card from "./Card";
 import { Book, Category } from "../types";
 
@@ -18,7 +18,7 @@ interface HomePageProps {
 const HomePage: React.FC<HomePageProps> = ({ mockData }) => {
   return (
     <>
-      <NavBar />
+      <HomeNavBar />
 
       <Hero />
 
