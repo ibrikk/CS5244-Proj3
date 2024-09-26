@@ -21,6 +21,7 @@ const HomePage = () => {
       <section className="homepage-card-section grid grid-full">
         <h3 className="homepage-category-name">New Releases</h3>
         <div className="cards-container grid grid-full">
+          {/* TODO: Add more cards */}
           <Card picture={orwell} />
         </div>
       </section>

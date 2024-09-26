@@ -11,10 +11,13 @@ function App() {
   return (
     <Router>
       <div className="app-container">
+        {/* TODO: Add a functionality to the button to change on toggle to the profile pic and vice versa */}
         <Header />
         <main className="main-content">
           <Routes>
             <Route path="/" element={<HomePage />} />
+            {/* TODO: Make the Nav different than homepage */}
+            {/* TODO: Render cards in Homepage Card.tsx */}
             <Route path="/category/:categoryName" element={<CategoryPage />} />
           </Routes>
         </main>
