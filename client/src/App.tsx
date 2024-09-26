@@ -4,15 +4,22 @@ import HomePage from "./components/HomePage";
 import CategoryPage from "./components/CategoryBookList";
 import Footer from "./components/Footer";
 
+import "./assets/css/global.css";
+import "./App.css";
+
 function App() {
   return (
     <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/category/:categoryName" element={<CategoryPage />} />
-      </Routes>
-      <Footer />
+      <div className="app-container">
+        <Header />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/category/:categoryName" element={<CategoryPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }

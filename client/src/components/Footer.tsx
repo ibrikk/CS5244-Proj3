@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import { Mail, MapPin, Facebook } from "lucide-react";
 import "../assets/css/global.css";
 import "../assets/css/AppHeader.css";
@@ -7,23 +7,23 @@ import "../assets/css/AppFooter.css";
 const Footer = () => {
   return (
     <footer className="grid-full">
-      <a href="/">
+      <Link to="/">
         <span className="material-symbols-outlined logo">book_5</span>
-      </a>
+      </Link>
       <p>©2024  Ibo.ok inc. All Rights Reserved</p>
       <section className="social-media-icons">
-        <a href="/">
+        <Link to="/">
           <Mail />
-        </a>
-        <a href="/">
+        </Link>
+        <Link to="/">
           <MapPin />
-        </a>
-        <a href="/">
+        </Link>
+        <Link to="/">
           <Facebook />
-        </a>
-        <a href="/" className="x-twitter-icon">
+        </Link>
+        <Link to="/" className="x-twitter-icon">
           <i className="fa-brands fa-x-twitter"></i>
-        </a>
+        </Link>
       </section>
     </footer>
   );
