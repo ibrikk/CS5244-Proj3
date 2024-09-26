@@ -18,8 +18,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage mockData={mockData} />} />
             {/* TODO: Make the Nav different than homepage */}
-            {/* TODO: Render cards in Homepage Card.tsx */}
-            {/* <Route path="/category/:categoryName" element={<CategoryPage />} /> */}
+            <Route path="/category/:categoryName" element={<CategoryPage />} />
           </Routes>
         </main>
         <Footer />
