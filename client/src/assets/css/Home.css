@@ -139,6 +139,7 @@
   font-weight: bold;
   font-size: 20px;
   padding-bottom: 15px;
+  width: max-content;
 }
 
 .book-image-read-btn-container {
