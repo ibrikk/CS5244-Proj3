@@ -4,19 +4,17 @@ import "../assets/css/AppHeader.css";
 import "../assets/css/global.css";
 import profilePic from "../assets/images/site/profile-pic.svg";
 
-const Header = () => {
-  const [isSignedIn, setIsSignedIn] = useState(true);
+interface HeaderProps {
+  isSignedIn: boolean;
+}
 
-  const toggleSignIn = () => {
-    setIsSignedIn(!isSignedIn);
-  };
-
+const Header: React.FC<HeaderProps> = ({ isSignedIn }) => {
   return (
     <header className="grid grid-full">
       <section className="grid grid-full">
         <div className="top-container grid-full">
           {isSignedIn ? (
-            <div className="signed-in-image-container" onClick={toggleSignIn}>
+            <div className="signed-in-image-container">
               <img src={profilePic} alt="Profile" />
               <div className="name-email-container">
                 <p className="user-name">Ibrahim Khalilov</p>
@@ -24,9 +22,7 @@ const Header = () => {
               </div>
             </div>
           ) : (
-            <button className="sign-in-btn" onClick={toggleSignIn}>
-              Sign In
-            </button>
+            <button className="sign-in-btn">Sign In</button>
           )}
 
           <a href="/">

@@ -8,9 +8,13 @@ import { Book, Category } from "../types";
 
 interface CategoryPageProps {
   mockData: Category[];
+  toggleSignIn: () => void;
 }
 
-const CategoryPage: React.FC<CategoryPageProps> = ({ mockData }) => {
+const CategoryPage: React.FC<CategoryPageProps> = ({
+  mockData,
+  toggleSignIn,
+}) => {
   const { categoryName } = useParams<{ categoryName: string }>();
 
   const getDisplayName = (categoryPath: string) => {
@@ -38,7 +42,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ mockData }) => {
 
   return (
     <>
-      <CategoryNavBar />
+      <CategoryNavBar toggleSignIn={toggleSignIn} />
       {category.length === 0 ? (
         <div className="not-found">
           <p>No books found for this category.</p>

@@ -13,12 +13,13 @@ import "../assets/css/HeaderDropdown.css";
 
 interface HomePageProps {
   mockData: Category[];
+  toggleSignIn: () => void;
 }
 
-const HomePage: React.FC<HomePageProps> = ({ mockData }) => {
+const HomePage: React.FC<HomePageProps> = ({ mockData, toggleSignIn }) => {
   return (
     <>
-      <HomeNavBar />
+      <HomeNavBar toggleSignIn={toggleSignIn} />
 
       <Hero />
 

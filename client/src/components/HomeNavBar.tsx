@@ -12,7 +12,11 @@ interface HomePageCategory {
   name: string;
 }
 
-const HomeNavBar = () => {
+interface HomeNavBarProps {
+  toggleSignIn: () => void;
+}
+
+const HomeNavBar: React.FC<HomeNavBarProps> = ({ toggleSignIn }) => {
   const dropdownCategories: DropdownCategory[] = [
     {
       value: "1",
@@ -77,7 +81,7 @@ const HomeNavBar = () => {
         </form>
         <span className="material-symbols-outlined search-icon">search</span>
       </div>
-      <div className="homepage-categories">
+      <div className="homepage-categories" onClick={toggleSignIn}>
         {homePageCategories.map((category) => (
           <Link to={category.link} className="category-link">
             {category.name}

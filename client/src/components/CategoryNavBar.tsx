@@ -8,7 +8,11 @@ interface CategoryPageCategory {
   name: string;
 }
 
-const CategoryNavBar = () => {
+interface CategoryNavBarProps {
+  toggleSignIn: () => void;
+}
+
+const CategoryNavBar: React.FC<CategoryNavBarProps> = ({ toggleSignIn }) => {
   const categoryPageCategories: CategoryPageCategory[] = [
     { id: 1, name: "Fiction" },
     { id: 2, name: "Business" },
@@ -30,7 +34,7 @@ const CategoryNavBar = () => {
         </form>
         <span className="material-symbols-outlined search-icon">search</span>
       </div>
-      <div className="homepage-categories">
+      <div className="homepage-categories" onClick={toggleSignIn}>
         {categoryPageCategories.map((category) => (
           <Link
             key={category.id}
