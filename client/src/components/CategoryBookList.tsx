@@ -32,29 +32,28 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ mockData }) => {
     return categoryMap[categoryPath] || categoryPath;
   };
 
-  console.log("mockData", mockData);
-
   const displayName = getDisplayName(categoryName || "");
   console.log("displayName", displayName);
   const category = mockData.filter(
     (item: Category) => item.category === displayName
   );
-  console.log("category", category);
 
   return (
     <>
       <CategoryNavBar />
-      <div className="not-found">
-        {category.length === 0 ? (
-          <p>No books found for the selected category.</p>
-        ) : (
+      {category.length === 0 ? (
+        <div className="not-found">
+          <p>No books found for this category.</p>
+        </div>
+      ) : (
+        <div className="grid grid-full">
           <div className="cards-container grid grid-full">
             {category[0].books.map((book: Book) => (
               <Card key={book.id} book={book} isHomePage={false} />
             ))}
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </>
   );
 };

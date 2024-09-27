@@ -22,7 +22,7 @@ const HomePage: React.FC<HomePageProps> = ({ mockData }) => {
 
       <Hero />
 
-      <section className="homepage-card-section grid grid-full">
+      <section className="grid grid-full">
         <h3 className="homepage-category-name">{mockData[0].category}</h3>
         <div className="cards-container grid grid-full">
           {mockData[0].books.map((book: Book) => (
