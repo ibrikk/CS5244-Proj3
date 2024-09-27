@@ -14,6 +14,20 @@ import originOfSecies from "./assets/images/books/Darvin Origins.jpg";
 import bananasBeaches from "./assets/images/books//cyntia Enloe.jpg";
 import imaginedCommunities from "./assets/images/books/imagined communities.jpg";
 
+// Fiction
+import courtOfMistAndRuin from "./assets/images/books//Court of mis.jpg";
+import assassinsBlade from "./assets/images/books/Assassins blade.jpg";
+import houseInCerulean from "./assets/images/books/House Cerulean.jpg";
+import reckless from "./assets/images/books//reckless.jpg";
+import thingsWeNever from "./assets/images/books/things_we_never_got_offer.jpg";
+import butcher from "./assets/images/books/Butcher and Blackbird.jpg";
+import houseOfEarth from "./assets/images/books/House of Earth and Blood.jpg";
+import houseOfSky from "./assets/images/books//house of sky and breath.jpg";
+import zodiac from "./assets/images/books/zodiac academy 2.jpg";
+import twoTwisted from "./assets/images/books/two twisted crowns.jpg";
+import ironFlames from "./assets/images/books/Iron_falems.jpg";
+import worldWalkers from "./assets/images/books/World_of_walkers.jpg";
+
 export interface Book {
   id: number;
   title: string;
@@ -147,6 +161,120 @@ const mockData: Category[] = [
         price: 18.4,
         picture: imaginedCommunities,
         pictureDescription: "Imagined Communities book cover",
+        isPublic: true,
+      },
+    ],
+  },
+  {
+    id: 1003,
+    category: "Fiction",
+    books: [
+      {
+        id: 12,
+        title: "A Court of Mist and Ruin",
+        author: "Sarah J. Maas",
+        price: 21.5,
+        picture: courtOfMistAndRuin,
+        pictureDescription: "A Court of Mist and Ruin book cover",
+        isPublic: true,
+      },
+      {
+        id: 13,
+        title: "The Assassin's Blade",
+        author: "Sarah J. Maas",
+        price: 14.5,
+        picture: assassinsBlade,
+        pictureDescription: "The Assassin's Blade book cover",
+        isPublic: true,
+      },
+      {
+        id: 14,
+        title: "The House in the Cerulean Sea",
+        author: "TJ Klune",
+        price: 18.45,
+        picture: houseInCerulean,
+        pictureDescription: "The House in the Cerulean Sea book cover",
+        isPublic: false,
+      },
+      {
+        id: 15,
+        title: "Reckless",
+        author: "Luan Roberts",
+        price: 11.75,
+        picture: reckless,
+        pictureDescription: "Reckless book cover",
+        isPublic: true,
+      },
+      {
+        id: 16,
+        title: "Things We Never Got Over",
+        author: "Lucky Score",
+        price: 15.6,
+        picture: thingsWeNever,
+        pictureDescription: "Things We Never Got Over book cover",
+        isPublic: false,
+      },
+      {
+        id: 17,
+        title: "The Butcher and the Blackbird",
+        author: "Brynne Weaver",
+        price: 23.5,
+        picture: butcher,
+        pictureDescription: "The Butcher and the Blackbird book cover",
+        isPublic: true,
+      },
+      {
+        id: 18,
+        title: "House of Earth and Blood",
+        author: "Sarah J. Maas",
+        price: 23.99,
+        picture: houseOfEarth,
+        pictureDescription: "House of Earth and Blood book cover",
+        isPublic: true,
+      },
+      {
+        id: 19,
+        title: "House of Sky and Breath",
+        author: "Sarah J. Maas",
+        price: 24.99,
+        picture: houseOfSky,
+        pictureDescription: "House of Sky and Breath book cover",
+        isPublic: false,
+      },
+      {
+        id: 20,
+        title: "Zodiac Academy 2",
+        author: "C. Peckham and S. Valenti",
+        price: 23.5,
+        picture: zodiac,
+        pictureDescription: "Zodiac Academy 2 book cover",
+        isPublic: false,
+      },
+      {
+        id: 21,
+        title: "Two Twisted Crowns",
+        author: "Rachel Gillig",
+        price: 11.89,
+        picture: twoTwisted,
+        pictureDescription: "Two Twisted Crowns book cover",
+        isPublic: true,
+      },
+      {
+        id: 22,
+        title: "Iron and Flames",
+        author: "Rebecca Yarros",
+        price: 19.99,
+        picture: ironFlames,
+        pictureDescription: "Iron and Flames book cover",
+        isPublic: false,
+      },
+      {
+        id: 23,
+        title: "World of Walkers",
+        author: "Neal Asher",
+        price: 29.92,
+        picture: worldWalkers,
+        pictureDescription: "World of Walkers book cover",
         isPublic: true,
       },
     ],
