@@ -16,7 +16,7 @@ const App = () => {
     setIsSignedIn(true);
   };
   return (
-    <Router>
+    <Router basename="IbrahimBookstoreReact">
       <div className="app-container">
         {/* TODO: Add a functionality to the button to change on toggle to the profile pic and vice versa */}
         <Header isSignedIn={isSignedIn} />

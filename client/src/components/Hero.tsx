@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ShoppingBag } from "lucide-react";
 import "../assets/css/Home.css";
 
@@ -9,10 +10,10 @@ const Hero = () => {
         <div className="hero-content">
           <h1>Discover pages of unknown stories and wisdom.</h1>
         </div>
-        <a href="/category" className="hero-button">
+        <Link to="/category" className="hero-button">
           <ShoppingBag className="pr-5" />
           <p className="cta-text">Start Shopping</p>
-        </a>
+        </Link>
       </section>
     </div>
   );

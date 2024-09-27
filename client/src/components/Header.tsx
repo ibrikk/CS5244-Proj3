@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { ShoppingBag } from "lucide-react";
 import "../assets/css/AppHeader.css";
 import "../assets/css/global.css";
@@ -25,18 +26,18 @@ const Header: React.FC<HeaderProps> = ({ isSignedIn }) => {
             <button className="sign-in-btn">Sign In</button>
           )}
 
-          <a href="/">
+          <Link to="/">
             <div className="logo-container">
               <span className="material-symbols-outlined logo pr-5">
                 book_5
               </span>
               <h1>ibo.ok</h1>
             </div>
-          </a>
-          <a href="/" className="shopping-bag">
+          </Link>
+          <Link to="/" className="shopping-bag">
             <ShoppingBag color="black" />
             <span className="badge">3</span>
-          </a>
+          </Link>
         </div>
       </section>
     </header>
