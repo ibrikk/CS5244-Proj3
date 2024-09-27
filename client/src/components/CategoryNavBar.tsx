@@ -33,6 +33,7 @@ const CategoryNavBar = () => {
       <div className="homepage-categories">
         {categoryPageCategories.map((category) => (
           <Link
+            key={category.id}
             to={`/category/${category.name}`}
             className={
               isActive(category.name) ? "selected-category" : "category-link"

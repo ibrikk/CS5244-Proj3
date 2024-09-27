@@ -18,7 +18,10 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage mockData={mockData} />} />
             {/* TODO: Make the Nav different than homepage */}
-            <Route path="/category/:categoryName" element={<CategoryPage />} />
+            <Route
+              path="/category/:categoryName"
+              element={<CategoryPage mockData={mockData} />}
+            />
           </Routes>
         </main>
         <Footer />

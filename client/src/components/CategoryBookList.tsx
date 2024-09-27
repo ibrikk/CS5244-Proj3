@@ -1,38 +1,59 @@
 import React from "react";
 import "../assets/css/CategoryBookList.css";
 import "../assets/css/global.css";
+import Card from "./Card";
 import CategoryNavBar from "./CategoryNavBar";
+import { useParams } from "react-router-dom";
+import { Book, Category } from "../types";
 
-const CategoryPage = () => {
+interface CategoryPageProps {
+  mockData: Category[];
+}
+
+const CategoryPage: React.FC<CategoryPageProps> = ({ mockData }) => {
+  const { categoryName } = useParams<{ categoryName: string }>();
+
+  console.log("categoryName", categoryName);
+
+  const getDisplayName = (categoryPath: string) => {
+    const categoryMap: { [key: string]: string } = {
+      NewReleases: "New Releases",
+      BestSellers: "Best Sellers",
+      Trending: "Trending",
+      OnSale: "On Sale",
+      Fiction: "Fiction",
+      Business: "Business",
+      Romance: "Romance",
+      Travel: "Travel",
+      Cooking: "Cooking",
+      ActionAndAdventure: "Action & Adventure",
+      DIY: "DIY",
+    };
+    return categoryMap[categoryPath] || categoryPath;
+  };
+
+  console.log("mockData", mockData);
+
+  const displayName = getDisplayName(categoryName || "");
+  console.log("displayName", displayName);
+  const category = mockData.filter(
+    (item: Category) => item.category === displayName
+  );
+  console.log("category", category);
+
   return (
     <>
       <CategoryNavBar />
-      <div className="category-page grid grid-full">
-        <h3 className="category-name">Fiction</h3>
-        <div className="cards-container grid grid-full">
-          {/* Example Card */}
-          <div className="card">
-            <div className="book-image-read-btn-container">
-              <img
-                src="/images/books/great-gratsby.jpg"
-                className="book-image"
-                alt="The Great Gatsby"
-              />
-              <button className="view-btn">
-                <i data-lucide="view" className="view-icon"></i>
-              </button>
-            </div>
-            <div className="year-author">
-              <p className="non-break">The Great Gatsby</p>
-              <p className="book-author">F-Scott Fitzgerald</p>
-            </div>
-            <div className="price-add">
-              <p>$15.99</p>
-              <button className="add-to-cart-btn">Add to cart</button>
-            </div>
+      <div className="not-found">
+        {category.length === 0 ? (
+          <p>No books found for the selected category.</p>
+        ) : (
+          <div className="cards-container grid grid-full">
+            {category[0].books.map((book: Book) => (
+              <Card key={book.id} book={book} isHomePage={false} />
+            ))}
           </div>
-          {/* Repeat Cards */}
-        </div>
+        )}
       </div>
     </>
   );
