@@ -36,9 +36,9 @@ a {
   white-space: nowrap;
 }
 
-a:visited {
+/* a:visited {
   color: inherit;
-}
+} */
 
 p {
   line-height: 1.5;

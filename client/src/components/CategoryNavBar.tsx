@@ -1,41 +1,46 @@
 import React from "react";
+import { Link, useParams } from "react-router-dom";
 import "../assets/css/CategoryBookList.css";
 import "../assets/css/global.css";
 
+interface CategoryPageCategory {
+  id: number;
+  name: string;
+}
+
 const CategoryNavBar = () => {
+  const categoryPageCategories: CategoryPageCategory[] = [
+    { id: 1, name: "Fiction" },
+    { id: 2, name: "Business" },
+    { id: 3, name: "Romance" },
+    { id: 4, name: "Travel" },
+    { id: 5, name: "Cooking" },
+    { id: 6, name: "Action&Adventure" },
+    { id: 7, name: "DIY" },
+  ];
+  const { categoryName } = useParams();
+
+  const isActive = (category: string) => categoryName === category;
+
   return (
     <nav className="grid grid-full">
       <div className="search-bar">
-        <form action="category.html">
+        <form action="/category">
           <input type="text" className="search-input" placeholder="Search..." />
         </form>
         <span className="material-symbols-outlined search-icon">search</span>
       </div>
       <div className="homepage-categories">
-        <a href="category.html?category=Fiction" className="selected-category">
-          Fiction
-        </a>
-        <a href="category.html?category=Business" className="category-link">
-          Business
-        </a>
-        <a href="category.html?category=Romance" className="category-link">
-          Romance
-        </a>
-        <a href="category.html?category=Travel" className="category-link">
-          Travel
-        </a>
-        <a href="category.html?category=Cooking" className="category-link">
-          Cooking
-        </a>
-        <a
-          href="category.html?category=Action&Adventure"
-          className="category-link"
-        >
-          Action & Adventure
-        </a>
-        <a href="category.html?category=DIY" className="category-link">
-          DIY
-        </a>
+        {categoryPageCategories.map((category) => (
+          <Link
+            to={`/category/${category.name}`}
+            className={
+              isActive(category.name) ? "selected-category" : "category-link"
+            }
+          >
+            {category.name}
+          </Link>
+        ))}
       </div>
     </nav>
   );
