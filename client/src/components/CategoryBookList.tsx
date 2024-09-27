@@ -13,8 +13,6 @@ interface CategoryPageProps {
 const CategoryPage: React.FC<CategoryPageProps> = ({ mockData }) => {
   const { categoryName } = useParams<{ categoryName: string }>();
 
-  console.log("categoryName", categoryName);
-
   const getDisplayName = (categoryPath: string) => {
     const categoryMap: { [key: string]: string } = {
       NewReleases: "New Releases",
@@ -26,14 +24,14 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ mockData }) => {
       Romance: "Romance",
       Travel: "Travel",
       Cooking: "Cooking",
-      ActionAndAdventure: "Action & Adventure",
+      "Action & Adventure": "Action & Adventure",
       DIY: "DIY",
     };
     return categoryMap[categoryPath] || categoryPath;
   };
 
   const displayName = getDisplayName(categoryName || "");
-  console.log("displayName", displayName);
+
   const category = mockData.filter(
     (item: Category) => item.category === displayName
   );

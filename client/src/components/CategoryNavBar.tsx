@@ -15,7 +15,7 @@ const CategoryNavBar = () => {
     { id: 3, name: "Romance" },
     { id: 4, name: "Travel" },
     { id: 5, name: "Cooking" },
-    { id: 6, name: "Action&Adventure" },
+    { id: 6, name: "Action & Adventure" },
     { id: 7, name: "DIY" },
   ];
   const { categoryName } = useParams();
